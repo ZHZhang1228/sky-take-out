@@ -76,12 +76,15 @@ public class EmployeeController {
     public Result<String> logout() {
         return Result.success();
     }
+
     @PostMapping
     @ApiOperation("新增员工")
-    public Result save(@RequestBody EmployeeDTO employeeDTO){
-        log.info("新增员工：{}",employeeDTO);
+    public Result save(@RequestBody EmployeeDTO employeeDTO) {
+        log.info("新增员工：{}", employeeDTO);
         employeeService.save(employeeDTO);
-
+        return Result.success();
     }
 
+
 }
+
