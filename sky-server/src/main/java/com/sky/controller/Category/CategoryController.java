@@ -1,4 +1,4 @@
-package com.sky.mapper.Category;
+package com.sky.controller.Category;
 
 import com.sky.dto.CategoryDTO;
 import com.sky.dto.CategoryPageQueryDTO;
