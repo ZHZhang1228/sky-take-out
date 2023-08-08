@@ -39,8 +39,7 @@ public class CategoryController {
     }
 
     /**
-     * 分类分页查询
-     * @param categoryPageQueryDTO
+     * 分类分页查询 QueryDTO
      * @return
      */
     @GetMapping("/page")
