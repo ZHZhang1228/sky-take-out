@@ -11,11 +11,13 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface DishMapper {
 
 
-    void update(Dish dish);
+
 
     /**
      * 根据分类id查询菜品数量
@@ -38,6 +40,12 @@ public interface DishMapper {
 
 
     @AutoFill(value = OperationType.UPDATE)
-    void updatee(Dish dish);
-    }
+    void update(Dish dish);
+
+
+    List<Dish> list(Dish dish);
+
+    @Select("select a.* from dish a left join setmeal_dish b on a.id = b.dish_id where b.setmeal_id = #{setmealId}")
+    List<Dish> getBySetmealId(Long setmealId);
+}
 
